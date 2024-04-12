@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("kotlin-parcelize")
+    id("kotlin-kapt")
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -23,12 +26,20 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+    buildFeatures {
+        buildConfig = true
+        dataBinding = true
+        viewBinding = true
     }
 }
 
@@ -42,4 +53,21 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // navigation component
+    implementation(libs.android.navigation.component)
+    implementation(libs.android.navigation.component.ui)
+    implementation(libs.android.navigation.component.dynamicsFeature)
+    androidTestImplementation(libs.android.navigation.component.testing)
+
+    // DI - Koin
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.core)
+    implementation(libs.koin.core.coroutines)
+    implementation(libs.koin.android)
+    implementation(libs.koin.android.compat)
+    implementation(libs.koin.androidx.navigation)
+
+    // Timber
+    implementation(libs.timber.log)
 }
