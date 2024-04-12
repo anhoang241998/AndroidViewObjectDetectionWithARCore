@@ -54,6 +54,10 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    // coroutine
+    implementation(libs.kotlin.coroutine.core)
+    implementation(libs.kotlin.coroutine.android)
+
     // navigation component
     implementation(libs.android.navigation.component)
     implementation(libs.android.navigation.component.ui)
