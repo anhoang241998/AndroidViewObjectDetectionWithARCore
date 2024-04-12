@@ -6,6 +6,8 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
+import timber.log.Timber
+import timber.log.Timber.*
 
 class ObjectDetectionWithARCoreApplication : Application() {
 
@@ -15,6 +17,7 @@ class ObjectDetectionWithARCoreApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        configTimber()
         configKoin()
     }
 
@@ -23,6 +26,12 @@ class ObjectDetectionWithARCoreApplication : Application() {
             androidLogger(level = Level.DEBUG)
             androidContext(this@ObjectDetectionWithARCoreApplication)
             modules(modules)
+        }
+    }
+
+    private fun configTimber() {
+        if (BuildConfig.DEBUG) {
+            Timber.plant(DebugTree())
         }
     }
 

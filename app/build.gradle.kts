@@ -37,6 +37,7 @@ android {
     }
 
     buildFeatures {
+        buildConfig = true
         dataBinding = true
         viewBinding = true
     }
@@ -66,4 +67,7 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.koin.android.compat)
     implementation(libs.koin.androidx.navigation)
+
+    // Timber
+    implementation(libs.timber.log)
 }
