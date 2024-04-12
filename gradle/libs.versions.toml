@@ -13,6 +13,7 @@ navigationComponent = "2.7.7"
 koin="3.5.5"
 timber = "5.0.1"
 kotlinCoroutine = "1.8.0"
+takt = "2.1.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -45,6 +46,9 @@ koin-androidx-navigation = { group = "io.insert-koin", name = "koin-androidx-nav
 
 # Timber
 timber-log = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+
+# FPS
+takt-fps-log = { group = "jp.wasabeef", name = "takt", version.ref = "takt" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

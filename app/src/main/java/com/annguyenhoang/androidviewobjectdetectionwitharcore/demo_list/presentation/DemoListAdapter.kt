@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.annguyenhoang.androidviewobjectdetectionwitharcore.common.ext.setOnThrottleClicked
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.databinding.ViewDemoItemBinding
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.demo_list.presentation.model.DemoItemUIState
 
@@ -29,7 +30,7 @@ class DemoListAdapter : ListAdapter<DemoItemUIState, DemoListAdapter.DemoListVie
         val demoUIState = getItem(position)
         holder.binding.apply {
             tvDemoItem.text = demoUIState.demoName
-            root.setOnClickListener {
+            root.setOnThrottleClicked {
                 onDemoItemTapped?.invoke(demoUIState)
             }
         }

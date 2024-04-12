@@ -10,8 +10,8 @@ class LocalDataSource {
             add(
                 DemoData(
                     demoId = index,
-                    demoName = YOLO_V8,
-                    demoType = YOLO_V8
+                    demoName = "CameraX with YOLOv8",
+                    demoType = CAMERAX_YOLO_V8
                 )
             )
         }
@@ -22,7 +22,7 @@ class LocalDataSource {
     }
 
     companion object {
-        private const val YOLO_V8 = "YOLOv8"
+        private const val CAMERAX_YOLO_V8 = "CameraXAndYOLOv8"
     }
 
 }

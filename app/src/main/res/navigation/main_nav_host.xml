@@ -9,5 +9,20 @@
         android:id="@+id/demoListFragment"
         android:name="com.annguyenhoang.androidviewobjectdetectionwitharcore.demo_list.presentation.DemoListFragment"
         android:label="fragment_demo_list"
-        tools:layout="@layout/fragment_demo_list" />
+        tools:layout="@layout/fragment_demo_list" >
+
+        <action
+            android:id="@+id/action_demoListFragment_to_cameraXWithYOLOV8Fragment"
+            app:destination="@id/cameraXWithYOLOV8Fragment"
+            app:enterAnim="@anim/enter_transition"
+            app:exitAnim="@anim/exit_transition"
+            app:popEnterAnim="@anim/pop_enter_transition"
+            app:popExitAnim="@anim/pop_exit_transition" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cameraXWithYOLOV8Fragment"
+        android:name="com.annguyenhoang.androidviewobjectdetectionwitharcore.camerax_with_yolov8.presentation.CameraXWithYOLOV8Fragment"
+        android:label="fragment_camerax_with_yolov8"
+        tools:layout="@layout/fragment_camerax_with_yolov8" />
 </navigation>

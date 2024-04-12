@@ -74,4 +74,7 @@ dependencies {
 
     // Timber
     implementation(libs.timber.log)
+
+    // FPS
+    debugImplementation(libs.takt.fps.log)
 }

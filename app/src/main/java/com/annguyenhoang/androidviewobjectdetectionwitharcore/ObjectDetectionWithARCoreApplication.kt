@@ -1,11 +1,20 @@
 package com.annguyenhoang.androidviewobjectdetectionwitharcore
 
 import android.app.Application
+import android.graphics.Color
+import android.util.Log
+import com.annguyenhoang.androidviewobjectdetectionwitharcore.data.data_source.AppLocalEventDataSource
+import com.annguyenhoang.androidviewobjectdetectionwitharcore.data.model.AppLocalEventData
+import com.annguyenhoang.androidviewobjectdetectionwitharcore.data.model.AppLocalEventType
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.di.data_source.DataSourceModule
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.di.navigation.NavigationModule
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.di.repository.RepositoryModule
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.di.use_case.UseCaseModule
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.di.view_model.ViewModelModule
+import jp.wasabeef.takt.Seat
+import jp.wasabeef.takt.Takt
+import org.koin.android.ext.android.get
+import org.koin.android.ext.android.inject
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -14,6 +23,8 @@ import timber.log.Timber
 import timber.log.Timber.DebugTree
 
 class ObjectDetectionWithARCoreApplication : Application() {
+
+    private val appLocalEventDataSource: AppLocalEventDataSource by inject()
 
     private val modules = listOf(
         NavigationModule.module,
@@ -27,6 +38,17 @@ class ObjectDetectionWithARCoreApplication : Application() {
         super.onCreate()
         configTimber()
         configKoin()
+
+        Takt.stock(this)
+            .hide()
+            .listener { fpsValue ->
+                appLocalEventDataSource.emitLocalEvent(
+                    AppLocalEventData(
+                        eventType = AppLocalEventType.FPS_TRACKING,
+                        data = fpsValue
+                    )
+                )
+            }
     }
 
     private fun configKoin() {
