@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_host.xml"
+    app:startDestination="@id/demoListFragment">
+
+    <fragment
+        android:id="@+id/demoListFragment"
+        android:name="com.annguyenhoang.androidviewobjectdetectionwitharcore.demo_list.presentation.DemoListFragment"
+        android:label="fragment_demo_list"
+        tools:layout="@layout/fragment_demo_list" />
+</navigation>
