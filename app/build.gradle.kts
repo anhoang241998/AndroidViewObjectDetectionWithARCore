@@ -77,4 +77,15 @@ dependencies {
 
     // FPS
     debugImplementation(libs.takt.fps.log)
+
+    // CameraX
+    implementation(libs.camerax.core)
+    implementation(libs.camerax.camera2)
+    implementation(libs.camerax.lifeCycle)
+    implementation(libs.camerax.video)
+    implementation(libs.camerax.view)
+    implementation(libs.camerax.ext)
+
+    // LeakCanary
+    debugImplementation(libs.leakCanary)
 }

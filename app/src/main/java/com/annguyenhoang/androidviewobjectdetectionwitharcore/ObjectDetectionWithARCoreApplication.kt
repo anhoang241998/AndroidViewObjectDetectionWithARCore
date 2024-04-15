@@ -1,19 +1,16 @@
 package com.annguyenhoang.androidviewobjectdetectionwitharcore
 
 import android.app.Application
-import android.graphics.Color
-import android.util.Log
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.data.data_source.AppLocalEventDataSource
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.data.model.AppLocalEventData
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.data.model.AppLocalEventType
+import com.annguyenhoang.androidviewobjectdetectionwitharcore.di.common.PermissionModule
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.di.data_source.DataSourceModule
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.di.navigation.NavigationModule
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.di.repository.RepositoryModule
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.di.use_case.UseCaseModule
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.di.view_model.ViewModelModule
-import jp.wasabeef.takt.Seat
 import jp.wasabeef.takt.Takt
-import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -31,7 +28,8 @@ class ObjectDetectionWithARCoreApplication : Application() {
         DataSourceModule.module,
         RepositoryModule.module,
         UseCaseModule.module,
-        ViewModelModule.module
+        ViewModelModule.module,
+        PermissionModule.module
     )
 
     override fun onCreate() {

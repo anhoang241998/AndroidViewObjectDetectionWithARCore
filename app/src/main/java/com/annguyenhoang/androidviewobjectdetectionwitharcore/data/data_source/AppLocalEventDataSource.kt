@@ -1,6 +1,7 @@
 package com.annguyenhoang.androidviewobjectdetectionwitharcore.data.data_source
 
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.data.model.AppLocalEventData
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -12,6 +13,7 @@ class AppLocalEventDataSource {
     val event: SharedFlow<AppLocalEventData>
         get() = _event
 
+    @OptIn(DelicateCoroutinesApi::class)
     fun emitLocalEvent(event: AppLocalEventData) {
         GlobalScope.launch {
             _event.emit(event)

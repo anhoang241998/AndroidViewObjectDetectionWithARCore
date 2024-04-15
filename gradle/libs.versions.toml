@@ -14,6 +14,8 @@ koin="3.5.5"
 timber = "5.0.1"
 kotlinCoroutine = "1.8.0"
 takt = "2.1.1"
+cameraX = "1.3.2"
+leakCanary = "2.13"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -49,6 +51,17 @@ timber-log = { group = "com.jakewharton.timber", name = "timber", version.ref = 
 
 # FPS
 takt-fps-log = { group = "jp.wasabeef", name = "takt", version.ref = "takt" }
+
+# CameraX
+camerax-core = { group = "androidx.camera", name = "camera-core", version.ref = "cameraX" }
+camerax-camera2 = { group = "androidx.camera", name = "camera-camera2", version.ref = "cameraX" }
+camerax-lifeCycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "cameraX" }
+camerax-video = { group = "androidx.camera", name = "camera-video", version.ref = "cameraX" }
+camerax-view = { group = "androidx.camera", name = "camera-view", version.ref = "cameraX" }
+camerax-ext = { group = "androidx.camera", name = "camera-extensions", version.ref = "cameraX" }
+
+# LeakCanary
+leakCanary = { group = "com.squareup.leakcanary", name = "leakcanary-android", version.ref = "leakCanary" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

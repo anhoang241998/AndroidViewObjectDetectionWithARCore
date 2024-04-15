@@ -1,7 +1,12 @@
 package com.annguyenhoang.androidviewobjectdetectionwitharcore.demo_list.presentation
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.activity.SystemBarStyle
+import androidx.activity.enableEdgeToEdge
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -18,12 +23,12 @@ class DemoListFragment : ViewBindingFragment<FragmentDemoListBinding>() {
         get() = FragmentDemoListBinding::inflate
 
     private val viewModel: DemoListViewModel by viewModel()
-    private val demoListAdapter: DemoListAdapter by lazy {
-        DemoListAdapter()
-    }
+    private lateinit var demoListAdapter: DemoListAdapter
 
     override fun initViews() {
         super.initViews()
+        changeStatusBarColor()
+        setUpPadding()
         setUpRecyclerView()
         observeDemoList()
     }
@@ -33,7 +38,8 @@ class DemoListFragment : ViewBindingFragment<FragmentDemoListBinding>() {
         demoListAdapter.setOnDemoItemTapped { demoItem ->
             when (demoItem.demoType) {
                 DemoTypeUIState.CAMERAX_WITH_YOLO_V8 -> {
-                    val cameraXWithYOLOv8 = DemoListFragmentDirections.actionDemoListFragmentToCameraXWithYOLOV8Fragment()
+                    val cameraXWithYOLOv8 = DemoListFragmentDirections
+                        .actionDemoListFragmentToCameraXWithYOLOV8Fragment()
                     findNavController().navigate(cameraXWithYOLOv8)
                 }
             }
@@ -52,10 +58,32 @@ class DemoListFragment : ViewBindingFragment<FragmentDemoListBinding>() {
 
     private fun setUpRecyclerView() {
         binding.rvDemoList.apply {
+            demoListAdapter = DemoListAdapter()
             setHasFixedSize(true)
             setItemViewCacheSize(20)
             adapter = demoListAdapter
         }
+    }
+
+    private fun setUpPadding() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.demoListContainer) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+    }
+
+    private fun changeStatusBarColor() {
+        activity?.enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.light(
+                Color.WHITE,
+                Color.WHITE
+            ),
+            navigationBarStyle = SystemBarStyle.light(
+                Color.WHITE,
+                Color.WHITE
+            ),
+        )
     }
 
 }
