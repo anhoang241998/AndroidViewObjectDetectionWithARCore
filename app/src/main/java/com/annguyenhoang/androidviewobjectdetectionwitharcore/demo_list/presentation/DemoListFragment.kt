@@ -2,6 +2,7 @@ package com.annguyenhoang.androidviewobjectdetectionwitharcore.demo_list.present
 
 import android.graphics.Color
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
@@ -44,6 +45,18 @@ class DemoListFragment : ViewBindingFragment<FragmentDemoListBinding>() {
                 }
             }
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        binding.rvDemoList.addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener {
+            override fun onViewAttachedToWindow(p0: View) = Unit
+
+            override fun onViewDetachedFromWindow(p0: View) {
+                binding.rvDemoList.adapter = null
+            }
+        })
     }
 
     private fun observeDemoList() {
