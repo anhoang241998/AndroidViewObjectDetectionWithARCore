@@ -41,6 +41,10 @@ android {
         dataBinding = true
         viewBinding = true
     }
+
+    androidResources {
+        noCompress += "tflite"
+    }
 }
 
 dependencies {
@@ -86,6 +90,13 @@ dependencies {
     implementation(libs.camerax.view)
     implementation(libs.camerax.ext)
 
-    // LeakCanary
-    debugImplementation(libs.leakCanary)
+    // ML Kit
+    implementation(libs.mlkit.objectdetection)
+    implementation(libs.mlkit.objectdetection.custom)
+
+    // Tensor lite
+    implementation(libs.tensorflow.lite.task.vision)
+
+    // Coil
+    implementation(libs.coil.kotlin)
 }

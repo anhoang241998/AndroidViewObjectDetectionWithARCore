@@ -38,6 +38,12 @@ class DemoListFragment : ViewBindingFragment<FragmentDemoListBinding>() {
         super.initControls()
         demoListAdapter.setOnDemoItemTapped { demoItem ->
             when (demoItem.demoType) {
+                DemoTypeUIState.MLKIT_OBJECT_DETECTION -> {
+                    val mlKitObjectDetection = DemoListFragmentDirections
+                        .actionDemoListFragmentToMLKitObjectDetectionFragment()
+                    findNavController().navigate(mlKitObjectDetection)
+                }
+
                 DemoTypeUIState.CAMERAX_WITH_YOLO_V8 -> {
                     val cameraXWithYOLOv8 = DemoListFragmentDirections
                         .actionDemoListFragmentToCameraXWithYOLOV8Fragment()

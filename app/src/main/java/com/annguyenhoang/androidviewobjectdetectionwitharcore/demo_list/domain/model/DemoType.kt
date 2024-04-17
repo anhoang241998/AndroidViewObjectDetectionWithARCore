@@ -1,7 +1,8 @@
 package com.annguyenhoang.androidviewobjectdetectionwitharcore.demo_list.domain.model
 
 enum class DemoType(val type: String) {
-    CAMERAX_WITH_YOLO_V8("CameraXAndYOLOv8");
+    CAMERAX_WITH_YOLO_V8("CameraXAndYOLOv8"),
+    MLKIT_OBJECT_DETECTION("MLKitObjectDetection");
 
     companion object {
         fun toDomain(type: String): DemoType {

@@ -3,10 +3,12 @@ package com.annguyenhoang.androidviewobjectdetectionwitharcore.camerax_with_yolo
 import android.Manifest
 import android.app.Application
 import android.content.ContentValues
+import android.graphics.Bitmap
 import android.os.Build
 import android.provider.MediaStore
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.ImageCaptureException
+import androidx.camera.core.ImageProxy
 import androidx.camera.video.MediaStoreOutputOptions
 import androidx.camera.video.Recorder
 import androidx.camera.video.Recording
@@ -45,7 +47,8 @@ class CameraXWithYOLOV8ViewModel(
             SharingStarted.WhileSubscribed(300)
         )
 
-    private var recording: Recording? = null
+    var recording: Recording? = null
+        private set
 
     fun takePhotoAndSaveToExternal(
         mainExecutors: Executor,
@@ -157,7 +160,7 @@ class CameraXWithYOLOV8ViewModel(
         val contentResolver = application.contentResolver
 
         // create and start a new recording session
-        val name = createImageOrVideoNameBasedOnTimeStamp()
+        val name = createImageOrVideoNameBasedOnTimeStamp() + ".mp4"
 
         val contentValues = ContentValues().apply {
             put(MediaStore.MediaColumns.DISPLAY_NAME, name)

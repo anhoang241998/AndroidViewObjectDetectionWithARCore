@@ -24,3 +24,17 @@ fun View.setOnThrottleClicked(
 fun Context.showToast(msg: String) {
     Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
 }
+
+fun View.show() {
+    this.visibility = View.VISIBLE
+}
+
+fun View.isShow() = this.visibility == View.VISIBLE
+
+fun View.hide() {
+    this.visibility = View.INVISIBLE
+}
+
+fun View.gone() {
+    this.visibility = View.GONE
+}
