@@ -1,0 +1,53 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-parcelize'
+
+android {
+    compileSdk ProjectConfig.COMPILE_SDK
+
+    defaultConfig {
+        minSdk ProjectConfig.MIN_SDK
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_18
+        targetCompatibility JavaVersion.VERSION_18
+    }
+
+    buildFeatures {
+        buildConfig true
+        viewBinding true
+        dataBinding true
+    }
+
+    kotlinOptions {
+        jvmTarget = '18'
+    }
+}
+
+dependencies {
+    // DI - Koin
+    implementation(platform(libs.koin.bom))
+    implementation libs.koin.core
+    implementation libs.koin.core.coroutines
+    implementation libs.koin.android
+    implementation libs.koin.android.compat
+    implementation libs.koin.androidx.navigation
+
+    // Timber
+    implementation libs.timber.log
+
+    // coroutine
+    implementation libs.kotlin.coroutine.core
+    implementation libs.kotlin.coroutine.android
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.activity
+    implementation libs.androidx.constraintlayout
+}

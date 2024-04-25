@@ -1,10 +1,9 @@
 package com.annguyenhoang.androidviewobjectdetectionwitharcore.di.view_model
 
-import com.annguyenhoang.androidviewobjectdetectionwitharcore.camerax_with_yolov8.presentation.CameraXWithYOLOV8ViewModel
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.demo_list.presentation.DemoListViewModel
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.di.KoinModule
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.mlkit_object_detection.presentation.MLKitObjectDetectionViewModel
-import org.koin.androidx.viewmodel.dsl.viewModel
+import com.annguyenhoang.presentation.CameraXWithYOLOV8ViewModel
 import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.core.module.Module
 import org.koin.dsl.module

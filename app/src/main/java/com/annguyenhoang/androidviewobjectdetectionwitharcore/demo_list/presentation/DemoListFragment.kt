@@ -12,9 +12,9 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
-import com.annguyenhoang.androidviewobjectdetectionwitharcore.common.fragment_binding.ViewBindingFragment
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.databinding.FragmentDemoListBinding
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.demo_list.presentation.model.DemoTypeUIState
+import com.annguyenhoang.core_ui.fragment_binding.ViewBindingFragment
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

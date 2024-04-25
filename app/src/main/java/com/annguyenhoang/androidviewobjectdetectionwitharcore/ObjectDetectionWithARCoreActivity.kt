@@ -3,8 +3,8 @@ package com.annguyenhoang.androidviewobjectdetectionwitharcore
 import android.view.LayoutInflater
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.annguyenhoang.androidviewobjectdetectionwitharcore.common.activity_binding.ViewBindingActivity
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.databinding.ActivityObjectDetectionWithArcoreBinding
+import com.annguyenhoang.core_ui.activity_binding.ViewBindingActivity
 
 class ObjectDetectionWithARCoreActivity : ViewBindingActivity<ActivityObjectDetectionWithArcoreBinding>() {
 

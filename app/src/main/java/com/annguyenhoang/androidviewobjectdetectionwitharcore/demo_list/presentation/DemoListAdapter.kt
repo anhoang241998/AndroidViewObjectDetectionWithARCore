@@ -5,9 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.annguyenhoang.androidviewobjectdetectionwitharcore.common.ext.setOnThrottleClicked
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.databinding.ViewDemoItemBinding
 import com.annguyenhoang.androidviewobjectdetectionwitharcore.demo_list.presentation.model.DemoItemUIState
+import com.annguyenhoang.core_ui.ext.setOnThrottleClicked
 
 class DemoListAdapter : ListAdapter<DemoItemUIState, DemoListAdapter.DemoListViewHolder>(differ) {
 

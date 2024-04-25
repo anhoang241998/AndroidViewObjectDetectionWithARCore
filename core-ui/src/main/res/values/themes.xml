@@ -1,0 +1,8 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AndroidViewObjectDetectionWithARCore" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:splitMotionEvents">false</item>
+    </style>
+
+    <style name="Theme.AndroidViewObjectDetectionWithARCore" parent="Base.Theme.AndroidViewObjectDetectionWithARCore" />
+</resources>

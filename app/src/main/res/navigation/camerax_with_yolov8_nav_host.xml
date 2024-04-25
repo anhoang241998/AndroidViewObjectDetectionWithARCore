@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/camerax_with_yolov8_nav_host"
+    app:startDestination="@id/cameraXWithYOLOV8Fragment">
+
+    <fragment
+        android:id="@+id/cameraXWithYOLOV8Fragment"
+        android:name="com.annguyenhoang.presentation.CameraXWithYOLOV8Fragment"
+        android:label="fragment_camerax_with_yolov8"
+        tools:layout="@layout/fragment_camerax_with_yolov8" />
+
+</navigation>

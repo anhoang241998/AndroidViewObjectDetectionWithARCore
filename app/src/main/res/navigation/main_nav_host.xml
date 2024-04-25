@@ -13,7 +13,7 @@
 
         <action
             android:id="@+id/action_demoListFragment_to_cameraXWithYOLOV8Fragment"
-            app:destination="@id/cameraXWithYOLOV8Fragment"
+            app:destination="@id/camerax_with_yolov8_nav_host"
             app:enterAnim="@anim/enter_transition"
             app:exitAnim="@anim/exit_transition"
             app:popEnterAnim="@anim/pop_enter_transition"
@@ -29,14 +29,10 @@
     </fragment>
 
     <fragment
-        android:id="@+id/cameraXWithYOLOV8Fragment"
-        android:name="com.annguyenhoang.androidviewobjectdetectionwitharcore.camerax_with_yolov8.presentation.CameraXWithYOLOV8Fragment"
-        android:label="fragment_camerax_with_yolov8"
-        tools:layout="@layout/fragment_camerax_with_yolov8" />
-
-    <fragment
         android:id="@+id/MLKitObjectDetectionFragment"
         android:name="com.annguyenhoang.androidviewobjectdetectionwitharcore.mlkit_object_detection.presentation.MLKitObjectDetectionFragment"
         android:label="fragment_mlkit_object_detection"
         tools:layout="@layout/fragment_mlkit_object_detection" />
+
+    <include app:graph="@navigation/camerax_with_yolov8_nav_host" />
 </navigation>
