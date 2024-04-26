@@ -1,6 +1,5 @@
 package com.annguyenhoang.mlkit_object_detection_presentation
 
-import android.app.Application
 import android.graphics.Bitmap
 import android.graphics.Matrix
 import androidx.camera.core.ImageCapture
@@ -24,9 +23,7 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.util.concurrent.Executor
 
-class MLKitObjectDetectionViewModel(
-    private val application: Application
-) : ViewModel() {
+class MLKitObjectDetectionViewModel : ViewModel() {
 
     private val _photoTaken = MutableStateFlow<List<Bitmap>>(emptyList())
     val photoTaken: StateFlow<List<Bitmap>>
