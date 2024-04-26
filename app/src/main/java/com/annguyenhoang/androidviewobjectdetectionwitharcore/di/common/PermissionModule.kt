@@ -1,6 +1,6 @@
 package com.annguyenhoang.androidviewobjectdetectionwitharcore.di.common
 
-import com.annguyenhoang.androidviewobjectdetectionwitharcore.di.KoinModule
+import com.annguyenhoang.core.utils.KoinModule
 import com.annguyenhoang.core_ui.permission.CameraPermissionHandlerImpl
 import com.annguyenhoang.core_ui.permission.PermissionHandler
 import org.koin.core.module.Module

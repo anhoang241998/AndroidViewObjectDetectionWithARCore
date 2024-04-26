@@ -1,8 +1,8 @@
 package com.annguyenhoang.androidviewobjectdetectionwitharcore.di.view_model
 
-import com.annguyenhoang.androidviewobjectdetectionwitharcore.demo_list.presentation.DemoListViewModel
-import com.annguyenhoang.androidviewobjectdetectionwitharcore.di.KoinModule
-import com.annguyenhoang.androidviewobjectdetectionwitharcore.mlkit_object_detection.presentation.MLKitObjectDetectionViewModel
+import com.annguyenhoang.core.utils.KoinModule
+import com.annguyenhoang.mlkit_object_detection_presentation.MLKitObjectDetectionViewModel
+import com.annguyenhoang.demo_list_presentation.DemoListViewModel
 import com.annguyenhoang.presentation.CameraXWithYOLOV8ViewModel
 import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.core.module.Module

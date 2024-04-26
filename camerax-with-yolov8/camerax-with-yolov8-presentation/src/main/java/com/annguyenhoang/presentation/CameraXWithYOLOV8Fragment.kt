@@ -19,8 +19,8 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.annguyenhoang.core_ui.R
 import com.annguyenhoang.camerax_with_yolov8_presentation.databinding.FragmentCameraxWithYolov8Binding
+import com.annguyenhoang.core_ui.R
 import com.annguyenhoang.core_ui.ext.setOnThrottleClicked
 import com.annguyenhoang.core_ui.ext.showToast
 import com.annguyenhoang.core_ui.fragment_binding.ViewBindingFragment

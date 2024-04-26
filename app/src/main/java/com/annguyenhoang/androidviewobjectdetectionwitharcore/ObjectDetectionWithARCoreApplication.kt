@@ -9,6 +9,7 @@ import com.annguyenhoang.androidviewobjectdetectionwitharcore.di.view_model.View
 import com.annguyenhoang.core.data.data_source.AppLocalEventDataSource
 import com.annguyenhoang.core.data.model.AppLocalEventData
 import com.annguyenhoang.core.data.model.AppLocalEventType
+import com.annguyenhoang.androidviewobjectdetectionwitharcore.di.common.NavigationModule
 import jp.wasabeef.takt.Takt
 import org.koin.android.ext.android.inject
 import org.koin.android.ext.koin.androidContext
@@ -27,7 +28,8 @@ class ObjectDetectionWithARCoreApplication : Application() {
         RepositoryModule.module,
         UseCaseModule.module,
         ViewModelModule.module,
-        PermissionModule.module
+        PermissionModule.module,
+        NavigationModule.module
     )
 
     override fun onCreate() {

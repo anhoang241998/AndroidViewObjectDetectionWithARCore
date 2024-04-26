@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.annguyenhoang.core.utils.Constants.CANNOT_BIND_FRAGMENT
@@ -12,6 +13,7 @@ abstract class ViewBindingFragment<T : ViewBinding> : Fragment() {
 
     abstract val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> T
 
+    open val enableBackPressed = true
     private var _binding: T? = null
     val binding: T
         get() = requireNotNull(
@@ -34,6 +36,12 @@ abstract class ViewBindingFragment<T : ViewBinding> : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initViews()
         initControls()
+
+        activity?.onBackPressedDispatcher?.addCallback(object : OnBackPressedCallback(enableBackPressed) {
+            override fun handleOnBackPressed() {
+                onBackPressed()
+            }
+        })
     }
 
     override fun onDestroyView() {
@@ -43,5 +51,6 @@ abstract class ViewBindingFragment<T : ViewBinding> : Fragment() {
 
     open fun initViews() = Unit
     open fun initControls() = Unit
+    open fun onBackPressed() = Unit
 
 }

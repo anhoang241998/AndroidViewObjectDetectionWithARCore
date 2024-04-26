@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
@@ -12,6 +13,7 @@ import com.annguyenhoang.core.utils.Constants
 
 abstract class DataBindingFragment<T : ViewDataBinding> : Fragment() {
 
+    open val enableBackPressed = true
     abstract val layoutId: Int
     private val _layoutId: Int
         @LayoutRes
@@ -39,6 +41,12 @@ abstract class DataBindingFragment<T : ViewDataBinding> : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initViews()
         initControls()
+
+        activity?.onBackPressedDispatcher?.addCallback(object : OnBackPressedCallback(enableBackPressed) {
+            override fun handleOnBackPressed() {
+                onBackPressed()
+            }
+        })
     }
 
     override fun onDestroyView() {
@@ -48,5 +56,6 @@ abstract class DataBindingFragment<T : ViewDataBinding> : Fragment() {
 
     open fun initViews() = Unit
     open fun initControls() = Unit
+    open fun onBackPressed() = Unit
 
 }

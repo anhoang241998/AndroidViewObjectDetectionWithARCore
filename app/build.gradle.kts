@@ -51,6 +51,10 @@ dependencies {
     cameraxWithYOLOV8PresentationModule()
     cameraxWithYOLOV8DomainModule()
     cameraxWithYOLOV8DataModule()
+    demoListPresentationModule()
+    demoListDomainModule()
+    demoListDataModule()
+    mlKitObjetDetectionPresentationModule()
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -81,22 +85,4 @@ dependencies {
 
     // FPS
     debugImplementation(libs.takt.fps.log)
-
-    // CameraX
-    implementation(libs.camerax.core)
-    implementation(libs.camerax.camera2)
-    implementation(libs.camerax.lifeCycle)
-    implementation(libs.camerax.video)
-    implementation(libs.camerax.view)
-    implementation(libs.camerax.ext)
-
-    // ML Kit
-    implementation(libs.mlkit.objectdetection)
-    implementation(libs.mlkit.objectdetection.custom)
-
-    // Tensor lite
-    implementation(libs.tensorflow.lite.task.vision)
-
-    // Coil
-    implementation(libs.coil.kotlin)
 }

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/demoListFragment"
-        android:name="com.annguyenhoang.androidviewobjectdetectionwitharcore.demo_list.presentation.DemoListFragment"
+        android:name="com.annguyenhoang.demo_list_presentation.DemoListFragment"
         android:label="fragment_demo_list"
         tools:layout="@layout/fragment_demo_list">
 
@@ -21,18 +21,13 @@
 
         <action
             android:id="@+id/action_demoListFragment_to_MLKitObjectDetectionFragment"
-            app:destination="@id/MLKitObjectDetectionFragment"
+            app:destination="@id/mlkit_with_object_detection_nav_host"
             app:enterAnim="@anim/enter_transition"
             app:exitAnim="@anim/exit_transition"
             app:popEnterAnim="@anim/pop_enter_transition"
             app:popExitAnim="@anim/pop_exit_transition" />
     </fragment>
 
-    <fragment
-        android:id="@+id/MLKitObjectDetectionFragment"
-        android:name="com.annguyenhoang.androidviewobjectdetectionwitharcore.mlkit_object_detection.presentation.MLKitObjectDetectionFragment"
-        android:label="fragment_mlkit_object_detection"
-        tools:layout="@layout/fragment_mlkit_object_detection" />
-
+    <include app:graph="@navigation/mlkit_with_object_detection_nav_host" />
     <include app:graph="@navigation/camerax_with_yolov8_nav_host" />
 </navigation>

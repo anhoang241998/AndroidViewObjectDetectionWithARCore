@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mlkit_with_object_detection_nav_host"
+    app:startDestination="@id/MLKitObjectDetectionFragment">
+
+    <fragment
+        android:id="@+id/MLKitObjectDetectionFragment"
+        android:name="com.annguyenhoang.mlkit_object_detection_presentation.MLKitObjectDetectionFragment"
+        android:label="fragment_mlkit_object_detection"
+        tools:layout="@layout/fragment_mlkit_object_detection" />
+
+</navigation>
