@@ -21,7 +21,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DemoListFragment : ViewBindingFragment<FragmentDemoListBinding>() {
 
-    private val navigator: AppNavigator by inject<AppNavigator>()
+    private val navigator: AppNavigator by inject()
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentDemoListBinding
         get() = FragmentDemoListBinding::inflate

@@ -13,7 +13,7 @@ abstract class ViewBindingFragment<T : ViewBinding> : Fragment() {
 
     abstract val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> T
 
-    open val enableBackPressed = true
+    open val enableCustomBackPressed = false
     private var _binding: T? = null
     val binding: T
         get() = requireNotNull(
@@ -37,9 +37,13 @@ abstract class ViewBindingFragment<T : ViewBinding> : Fragment() {
         initViews()
         initControls()
 
-        activity?.onBackPressedDispatcher?.addCallback(object : OnBackPressedCallback(enableBackPressed) {
+        activity?.onBackPressedDispatcher?.addCallback(object : OnBackPressedCallback(enableCustomBackPressed) {
             override fun handleOnBackPressed() {
-                onBackPressed()
+                if (enableCustomBackPressed) {
+                    onBackPressed()
+                } else {
+                    activity?.onBackPressed()
+                }
             }
         })
     }

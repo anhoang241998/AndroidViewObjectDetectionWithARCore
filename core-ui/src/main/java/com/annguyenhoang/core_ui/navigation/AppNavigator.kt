@@ -1,9 +1,6 @@
 package com.annguyenhoang.core_ui.navigation
 
-import androidx.navigation.NavController
-
-interface AppNavigator {
-    fun setUpRootNavController(navController: NavController)
+interface AppNavigator : Navigator {
     fun moveToMLKitObjectDetectionFragment()
     fun moveToCameraXWithYOLOV8Fragment()
 }

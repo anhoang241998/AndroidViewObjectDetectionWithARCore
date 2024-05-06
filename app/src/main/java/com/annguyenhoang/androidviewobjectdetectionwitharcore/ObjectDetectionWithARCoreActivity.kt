@@ -14,7 +14,7 @@ class ObjectDetectionWithARCoreActivity : ViewBindingActivity<ActivityObjectDete
         get() = ActivityObjectDetectionWithArcoreBinding::inflate
     private lateinit var navController: NavController
 
-    private val appNavigator by inject<AppNavigator>()
+    private val navigator by inject<AppNavigator>()
 
     override fun initViews() {
         setupNavController()
@@ -25,6 +25,6 @@ class ObjectDetectionWithARCoreActivity : ViewBindingActivity<ActivityObjectDete
         val navHostFragment = supportFragmentManager.findFragmentById(navHostContainerId) as NavHostFragment
         navController = navHostFragment.navController
 
-        appNavigator.setUpRootNavController(navController)
+        navigator.setUpRootNavController(navController)
     }
 }
