@@ -19,4 +19,11 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.koin.android.compat)
     implementation(libs.koin.androidx.navigation)
+
+    // Object feature and model
+    implementation("com.google.mlkit:object-detection:17.0.1")
+    // Custom model
+    implementation("com.google.mlkit:object-detection-custom:17.0.1")
+
+    api("com.google.guava:guava:33.0.0-jre")
 }

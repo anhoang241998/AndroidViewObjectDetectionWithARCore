@@ -27,4 +27,6 @@ dependencies {
 
     // Coil
     implementation(libs.coil.kotlin)
+
+    implementation("com.android.volley:volley:1.2.1")
 }
